@@ -1,0 +1,4 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "C_Cpp.default.cppStandard": "c++17"
+}
