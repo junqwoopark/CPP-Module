@@ -1,4 +1,8 @@
 {
     "makefile.extensionOutputFolder": "./.vscode",
-    "C_Cpp.default.cppStandard": "c++17"
+    "C_Cpp.default.cppStandard": "c++98",
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+    "files.associations": {
+        "ostream": "cpp"
+    }
 }
