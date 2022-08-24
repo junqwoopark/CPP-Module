@@ -15,7 +15,7 @@ NAME=megaphone
 CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
-SRCS = megaphone.cpp
+SRCS = Contact.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
