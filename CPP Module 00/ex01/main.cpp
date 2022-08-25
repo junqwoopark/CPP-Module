@@ -14,4 +14,4 @@
 
 #include "Contact.hpp"
 
-int main(void) { return (0); }
+int main(void) { Contact contacts[5]; }

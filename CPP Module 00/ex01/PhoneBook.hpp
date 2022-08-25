@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+#include "Contact.hpp"
+
 class PhoneBook {
    public:
     PhoneBook();
@@ -13,6 +15,12 @@ class PhoneBook {
     PhoneBook& operator=(PhoneBook const& rhs);
 
    private:
+    int _idx = 0;
+    Contact _contacts[8];
+
+   public:
+    void add();
+    void search();
 };
 
 std::ostream& operator<<(std::ostream& o, PhoneBook const& i);
