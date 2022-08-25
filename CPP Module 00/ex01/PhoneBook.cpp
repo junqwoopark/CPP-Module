@@ -35,6 +35,17 @@ std::ostream& operator<<(std::ostream& o, PhoneBook const& i) {
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void PhoneBook::print_name(std::string str) {
+    if (str.length() <= 10) {
+        for (int i = 0; i < 10 - str.length(); i++) {
+            std::cout << ' ';
+        }
+        std::cout << str;
+    } else {
+        std::cout << str.substr(0, 9) << '.';
+    }
+}
+
 void PhoneBook::add() {
     Contact tmp;
     std::string s;
@@ -62,9 +73,12 @@ void PhoneBook::search() {
     for (int i = 0; i < 8; i++) {
         if (_contacts[i].is_valid_contact()) {
             std::cout << "|         " << i << '|';
-            if (_contacts[i].get_first_name().length() <= 10) {
-                std::cout << _contacts[i].get_first_name() << '|';
-            }
+            print_name(_contacts[i].get_first_name());
+            std::cout << '|';
+            print_name(_contacts[i].get_last_name());
+            std::cout << '|';
+            print_name(_contacts[i].get_nickname());
+            std::cout << '|';
         } else
             std::cout << "|          |          |          |          |";
     }

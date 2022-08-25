@@ -19,6 +19,7 @@ class PhoneBook {
     Contact _contacts[8];
 
    public:
+    void print_name(std::string str);
     void add();
     void search();
 };

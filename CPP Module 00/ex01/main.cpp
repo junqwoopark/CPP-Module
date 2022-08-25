@@ -12,6 +12,15 @@
 
 #include <iostream>
 
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-int main(void) { Contact contacts[5]; }
+int main(void) {
+    PhoneBook phonebook;
+    std::string input;
+    while (true) {
+        std::getline(std::cin, input);
+        if (input == "ADD") {
+        } else if (input == "SEARCH") {
+        }
+    }
+}
