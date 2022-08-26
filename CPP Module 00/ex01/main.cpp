@@ -17,10 +17,13 @@
 int main(void) {
     PhoneBook phonebook;
     std::string input;
-    while (true) {
-        std::getline(std::cin, input);
+    while (std::getline(std::cin, input)) {
         if (input == "ADD") {
+            phonebook.add();
         } else if (input == "SEARCH") {
+            phonebook.search();
+        } else {
+            std::cout << "※ please input 'ADD' or 'SEARCH!!!'" << std::endl;
         }
     }
 }

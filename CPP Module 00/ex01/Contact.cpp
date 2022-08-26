@@ -25,11 +25,13 @@ Contact::~Contact() {}
 */
 
 Contact &Contact::operator=(Contact const &rhs) {
-    (void)rhs;
-    // if ( this != &rhs )
-    //{
-    // this->_value = rhs.getValue();
-    //}
+    if (this != &rhs) {
+        this->_first_name = rhs.get_first_name();
+        this->_last_name = rhs.get_last_name();
+        this->_nickname = rhs.get_nickname();
+        this->_phone_number = rhs.get_phone_number();
+        this->_darkest_secret = rhs.get_darkest_secret();
+    }
     return *this;
 }
 

@@ -15,7 +15,7 @@ class PhoneBook {
     PhoneBook& operator=(PhoneBook const& rhs);
 
    private:
-    int _idx = 0;
+    int _idx;
     Contact _contacts[8];
 
    public:

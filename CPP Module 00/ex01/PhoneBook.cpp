@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-PhoneBook::PhoneBook() {}
+PhoneBook::PhoneBook() { _idx = 0; }
 
 PhoneBook::PhoneBook(const PhoneBook& src) {}
 
@@ -50,15 +50,20 @@ void PhoneBook::add() {
     Contact tmp;
     std::string s;
 
-    std::getline(std::cin, s);
+    std::cout << "first_name: ";
+    if (!std::getline(std::cin, s)) return;
     tmp.set_first_name(s);
-    std::getline(std::cin, s);
+    std::cout << "last_name: ";
+    if (!std::getline(std::cin, s)) return;
     tmp.set_last_name(s);
-    std::getline(std::cin, s);
+    std::cout << "nickname: ";
+    if (!std::getline(std::cin, s)) return;
     tmp.set_nickname(s);
-    std::getline(std::cin, s);
+    std::cout << "phone_number: ";
+    if (!std::getline(std::cin, s)) return;
     tmp.set_phone_number(s);
-    std::getline(std::cin, s);
+    std::cout << "darkest_secret: ";
+    if (!std::getline(std::cin, s)) return;
     tmp.set_darkest_secret(s);
     if (tmp.is_valid_contact()) {
         _contacts[_idx] = tmp;
@@ -81,6 +86,13 @@ void PhoneBook::search() {
             std::cout << '|';
         } else
             std::cout << "|          |          |          |          |";
+        std::cout << std::endl;
+    }
+    std::getline(std::cin, tmp);
+    if (tmp.length() == 1 && '0' <= tmp[0] && tmp[0] <= '8' &&
+        _contacts[tmp[0] - '0'].is_valid_contact()) {
+        std::cout << "first_name: " << _contacts[tmp[0] - '0'].get_first_name()
+                  << std::endl;
     }
 }
 
