@@ -9,17 +9,15 @@
 class PhoneBook {
    public:
     PhoneBook();
-    PhoneBook(PhoneBook const& src);
     ~PhoneBook();
-
-    PhoneBook& operator=(PhoneBook const& rhs);
 
    private:
     int _idx;
     Contact _contacts[8];
+	void print_name(std::string str);
+	void readline(std::string message, std::string &s);
 
    public:
-    void print_name(std::string str);
     void add();
     void search();
 };

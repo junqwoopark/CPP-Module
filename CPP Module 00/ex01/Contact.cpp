@@ -12,8 +12,6 @@ Contact::Contact() {
     _darkest_secret = "";
 }
 
-Contact::Contact(const Contact &src) {}
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -35,21 +33,24 @@ Contact &Contact::operator=(Contact const &rhs) {
     return *this;
 }
 
-std::ostream &operator<<(std::ostream &o, Contact const &i) {
-    (void)i;
-    // o << "Value = " << i.getValue();
-    return o;
-}
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
+int	Contact::is_print_str(std::string str) {
+	for (size_t i = 0; i < str.length(); i++) {
+		if (!std::isprint(str[i]))
+			return (false);
+	}
+	return (true);
+}
+
 int Contact::is_valid_contact() {
-    if (_first_name == "" || _last_name == "" || _nickname == "" ||
-        _phone_number == "" || _darkest_secret == "")
+    if (_first_name == "" || _last_name == "" || _nickname == "" || _phone_number == "" || _darkest_secret == "")
         return (false);
-    return (true);
+	else if (!(is_print_str(_first_name) && is_print_str(_last_name) && is_print_str(_nickname) && is_print_str(_phone_number) && is_print_str(_darkest_secret)))
+	    return (false);
+	return (true);
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

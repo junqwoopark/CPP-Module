@@ -10,12 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=megaphone
+NAME=phonebook
 
 CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
-SRCS = Contact.cpp main.cpp
+SRCS = main.cpp Contact.cpp PhoneBook.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

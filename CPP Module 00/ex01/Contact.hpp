@@ -11,6 +11,8 @@ class Contact {
     std::string _nickname;
     std::string _phone_number;
     std::string _darkest_secret;
+	
+	int is_print_str(std::string str);
 
    public:
     Contact();
