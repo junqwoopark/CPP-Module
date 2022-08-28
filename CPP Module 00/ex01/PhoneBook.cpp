@@ -32,10 +32,10 @@ void PhoneBook::print_name(std::string str) {
 }
 
 void PhoneBook::readline(std::string message, std::string &s) {
-	if (std::cin.good()) {
-		std::cout << message;
-		std::cin >> s;
-	}
+    if (std::cin.good()) {
+        std::cout << message;
+        std::cin >> s;
+    }
 }
 
 void PhoneBook::add() {
@@ -56,9 +56,9 @@ void PhoneBook::add() {
         _contacts[_idx] = tmp;
         _idx = (_idx + 1) % 8;
     } else if (std::cin.good()) {
-		std::cout << "Each field must not be empty.";
-	}
-	std::cout << std::endl;
+        std::cout << "Each field must not be empty.";
+    }
+    std::cout << std::endl;
     return;
 }
 void PhoneBook::search() {
@@ -78,27 +78,28 @@ void PhoneBook::search() {
             std::cout << "|          |          |          |          |";
         std::cout << std::endl;
     }
-	std::cout << "index: ";
-	std::getline(std::cin, tmp);
-	if (std::cin.good()) {
-		if (tmp.length() == 1 && '0' <= tmp[0] && tmp[0] <= '8' &&
-			_contacts[tmp[0] - '0'].is_valid_contact()) {
-			std::cout << "first_name: " << _contacts[tmp[0] - '0'].get_first_name()
-					  << std::endl;
-			std::cout << "last_name: " << _contacts[tmp[0] - '0'].get_last_name()
-					  << std::endl;
-			std::cout << "nickname: " << _contacts[tmp[0] - '0'].get_nickname()
-					  << std::endl;
-			std::cout << "phone_number: " << _contacts[tmp[0] - '0'].get_phone_number()
-					  << std::endl;
-			std::cout << "darkest_secret: " << _contacts[tmp[0] - '0'].get_darkest_secret()
-					  << std::endl;
-		}
-		else {
-			std::cout << "※ index is not valid!!!";
-		}
-	}
-	std::cout << std::endl;
+    std::cout << "index: ";
+    std::getline(std::cin, tmp);
+    if (std::cin.good()) {
+        if (tmp.length() == 1 && '0' <= tmp[0] && tmp[0] <= '8' &&
+            _contacts[tmp[0] - '0'].is_valid_contact()) {
+            std::cout << "first_name: "
+                      << _contacts[tmp[0] - '0'].get_first_name() << std::endl;
+            std::cout << "last_name: "
+                      << _contacts[tmp[0] - '0'].get_last_name() << std::endl;
+            std::cout << "nickname: " << _contacts[tmp[0] - '0'].get_nickname()
+                      << std::endl;
+            std::cout << "phone_number: "
+                      << _contacts[tmp[0] - '0'].get_phone_number()
+                      << std::endl;
+            std::cout << "darkest_secret: "
+                      << _contacts[tmp[0] - '0'].get_darkest_secret()
+                      << std::endl;
+        } else {
+            std::cout << "※ index is not valid!!!";
+        }
+    }
+    std::cout << std::endl;
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

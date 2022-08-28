@@ -17,25 +17,26 @@
 int main(void) {
     PhoneBook phonebook;
     std::string input;
-	std::cout << "PhoneBook Opened." << std::endl;
+    std::cout << "PhoneBook Opened." << std::endl;
     while (std::cin.good()) {
-		std::cout << "input: ";
-		std::getline(std::cin, input);
-		if (std::cin.good()) {
-			if (input == "ADD") {
-				phonebook.add();
-			} else if (input == "SEARCH") {
-				phonebook.search();
-			} else if (input == "EXIT") {
-				break ;
-			} else {
-				std::cout << "※ please input 'ADD' or 'SEARCH' or 'EXIT'!!!" << std::endl;
-			}
-		} else {
-			std::cout << std::endl;
-			break ;
-		}
+        std::cout << "input: ";
+        std::getline(std::cin, input);
+        if (std::cin.good()) {
+            if (input == "ADD") {
+                phonebook.add();
+            } else if (input == "SEARCH") {
+                phonebook.search();
+            } else if (input == "EXIT") {
+                break;
+            } else {
+                std::cout << "※ please input 'ADD' or 'SEARCH' or 'EXIT'!!!"
+                          << std::endl;
+            }
+        } else {
+            std::cout << std::endl;
+            break;
+        }
     }
-	std::cout << "PhoneBook Closed." << std::endl;
-	return (0);
+    std::cout << "PhoneBook Closed." << std::endl;
+    return (0);
 }

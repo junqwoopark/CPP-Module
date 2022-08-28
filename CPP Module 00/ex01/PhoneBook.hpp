@@ -14,8 +14,8 @@ class PhoneBook {
    private:
     int _idx;
     Contact _contacts[8];
-	void print_name(std::string str);
-	void readline(std::string message, std::string &s);
+    void print_name(std::string str);
+    void readline(std::string message, std::string& s);
 
    public:
     void add();
