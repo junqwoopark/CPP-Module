@@ -22,6 +22,4 @@ class PhoneBook {
     void search();
 };
 
-std::ostream& operator<<(std::ostream& o, PhoneBook const& i);
-
 #endif /* ***************************************************** PHONEBOOK_H */
