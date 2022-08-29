@@ -34,7 +34,7 @@ void PhoneBook::print_name(std::string str) {
 void PhoneBook::readline(std::string message, std::string &s) {
     if (std::cin.good()) {
         std::cout << message;
-        std::cin >> s;
+        std::getline(std::cin, s);
     }
 }
 
@@ -55,10 +55,12 @@ void PhoneBook::add() {
     if (tmp.is_valid_contact()) {
         _contacts[_idx] = tmp;
         _idx = (_idx + 1) % 8;
+        std::cout << "The contact was added successfully." << std::endl;
     } else if (std::cin.good()) {
-        std::cout << "Each field must not be empty.";
+        std::cout << "※ The contact is not valid!!!" << std::endl;
+    } else {
+        std::cout << std::endl;
     }
-    std::cout << std::endl;
     return;
 }
 void PhoneBook::search() {
@@ -96,10 +98,10 @@ void PhoneBook::search() {
                       << _contacts[tmp[0] - '0'].get_darkest_secret()
                       << std::endl;
         } else {
-            std::cout << "※ index is not valid!!!";
+            std::cout << "※ The index is not valid!!!" << std::endl;
         }
-    }
-    std::cout << std::endl;
+    } else
+        std::cout << std::endl;
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

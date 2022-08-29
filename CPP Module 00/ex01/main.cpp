@@ -29,7 +29,7 @@ int main(void) {
             } else if (input == "EXIT") {
                 break;
             } else {
-                std::cout << "※ please input 'ADD' or 'SEARCH' or 'EXIT'!!!"
+                std::cout << "※ Please input 'ADD' or 'SEARCH' or 'EXIT'!!!"
                           << std::endl;
             }
         } else {
