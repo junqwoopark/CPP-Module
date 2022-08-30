@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=main
+NAME=HI_THIS_IS_BRAIN
 
 CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror

@@ -10,12 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=Unnecessary_violence
+NAME=harlFilter
 
 CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRCS = main.cpp Harl.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-HumanB::HumanB(std::string name_) : weapon(tmp) { name = name_; }
+HumanB::HumanB(std::string name_) { name = name_; }
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -21,7 +21,7 @@ HumanB::~HumanB() {}
 */
 
 void HumanB::attack() {
-    std::cout << name << " attacks with their " << weapon.getType()
+    std::cout << name << " attacks with their " << weapon->getType()
               << std::endl;
 }
 
@@ -29,6 +29,6 @@ void HumanB::attack() {
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-void HumanB::setWeapon(Weapon &weapon_) { weapon = weapon_; }
+void HumanB::setWeapon(Weapon &weapon_) { weapon = &weapon_; }
 
 /* ************************************************************************** */

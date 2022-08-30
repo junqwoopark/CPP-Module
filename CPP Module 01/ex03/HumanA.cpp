@@ -6,7 +6,6 @@
 
 HumanA::HumanA(std::string name_, Weapon &weapon_) : weapon(weapon_) {
     name = name_;
-    weapon = weapon_;
 }
 
 /*

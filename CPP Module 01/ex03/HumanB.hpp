@@ -20,7 +20,7 @@ class HumanB {
    private:
     std::string name;
     Weapon tmp;
-    Weapon& weapon;
+    Weapon* weapon;
 };
 
 #endif /* ********************************************************** HUMANB_H \

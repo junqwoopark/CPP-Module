@@ -21,7 +21,7 @@ Weapon& Weapon::operator=(Weapon const& rhs) {
     if (this != &rhs) {
         this->type = rhs.getType();
     }
-    return *this;
+    return (*this);
 }
 
 /*
