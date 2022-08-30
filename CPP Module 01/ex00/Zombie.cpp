@@ -4,15 +4,15 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Zombie::Zombie() { name = "Default"; }
+Zombie::Zombie() { this->name = "Default"; }
 
-Zombie::Zombie(std::string name_) { name = name_; }
+Zombie::Zombie(std::string name) { this->name = name; }
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Zombie::~Zombie() { std::cout << name << ": Destroy..." << std::endl; }
+Zombie::~Zombie() { std::cout << this->name << ": Destroy..." << std::endl; }
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -23,7 +23,7 @@ Zombie::~Zombie() { std::cout << name << ": Destroy..." << std::endl; }
 */
 
 void Zombie::announce(void) {
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 /*

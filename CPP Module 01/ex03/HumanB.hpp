@@ -8,18 +8,17 @@
 
 class HumanB {
    public:
-    HumanB(std::string name_);
+    HumanB(std::string name);
     ~HumanB();
 
     HumanB& operator=(HumanB const& rhs);
 
     void attack();
 
-    void setWeapon(Weapon& weapon_);
+    void setWeapon(Weapon& weapon);
 
    private:
     std::string name;
-    Weapon tmp;
     Weapon* weapon;
 };
 

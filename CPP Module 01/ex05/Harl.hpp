@@ -14,7 +14,7 @@ class Harl {
     void complain(std::string level);
 
    private:
-    std::string _level;
+    std::string level;
 
     void debug(void);
     void info(void);

@@ -7,12 +7,12 @@ int main(int argc, char **argv) {
                   << std::endl;
         return (0);
     }
-    std::string filePath(argv[1]);
+    std::string fileName(argv[1]);
     std::string s1(argv[2]);
     std::string s2(argv[3]);
     std::string readData("");
 
-    std::ifstream file(filePath);
+    std::ifstream file(fileName);
     while (char c = file.get()) {
         if (c >= 0)
             readData += c;
@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
         }
     }
 
-    std::ofstream replacedFile(filePath + ".replace");
+    std::ofstream replacedFile(fileName + ".replace");
     replacedFile.write(readData.c_str(), readData.length());
     replacedFile.close();
 }

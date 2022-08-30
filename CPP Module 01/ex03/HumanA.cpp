@@ -4,8 +4,8 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-HumanA::HumanA(std::string name_, Weapon &weapon_) : weapon(weapon_) {
-    name = name_;
+HumanA::HumanA(std::string name, Weapon &weapon) : weapon(weapon) {
+    this->name = name;
 }
 
 /*

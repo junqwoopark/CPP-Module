@@ -5,7 +5,7 @@
 */
 
 Weapon::Weapon() {}
-Weapon::Weapon(const std::string type_) { type = type_; }
+Weapon::Weapon(const std::string type) { this->type = type; }
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -32,7 +32,7 @@ Weapon& Weapon::operator=(Weapon const& rhs) {
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-const std::string& Weapon::getType() const { return (type); };
-void Weapon::setType(const char* type_) { type = type_; }
+const std::string& Weapon::getType() const { return (this->type); };
+void Weapon::setType(const char* type) { this->type = type; }
 
 /* ************************************************************************** */

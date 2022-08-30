@@ -15,7 +15,7 @@ class Harl {
     void filter(std::string level);
 
    private:
-    std::string _level;
+    std::string level;
 
     void debug(void);
     void info(void);
