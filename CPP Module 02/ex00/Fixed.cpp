@@ -4,25 +4,31 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Fixed::Fixed() {}
+Fixed::Fixed() {
+    std::cout << "Default constructor called" << std::endl;
+    this->number = 0;
+}
 
-Fixed::Fixed(const Fixed& src) {}
+Fixed::Fixed(const Fixed& src) {
+    std::cout << "Copy constructor called" << std::endl;
+    this->number = src.getRawBits();
+}
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Fixed::~Fixed() {}
+Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
 Fixed& Fixed::operator=(Fixed const& rhs) {
-    // if ( this != &rhs )
-    //{
-    // this->_value = rhs.getValue();
-    //}
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this != &rhs) {
+        this->number = rhs.getRawBits();
+    }
     return *this;
 }
 
@@ -38,5 +44,12 @@ std::ostream& operator<<(std::ostream& o, Fixed const& i) {
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+int Fixed::getRawBits(void) const {
+    std::cout << "getRawBits member function called" << std::endl;
+    return (this->number);
+}
+
+void Fixed::setRawBits(int const raw) { this->number = raw; }
 
 /* ************************************************************************** */
