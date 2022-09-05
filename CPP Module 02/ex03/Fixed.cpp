@@ -5,21 +5,21 @@
 */
 
 Fixed::Fixed() {
-    std::cout << "Default constructor called" << std::endl;
+    // std::cout << "Default constructor called" << std::endl;
     _value = 0;
 }
 
 Fixed::Fixed(const Fixed& src) {
-    std::cout << "Copy constructor called" << std::endl;
+    // std::cout << "Copy constructor called" << std::endl;
     _value = src.getRawBits();
 }
 
 Fixed::Fixed(const int number) {
-    std::cout << "Int constructor called" << std::endl;
+    // std::cout << "Int constructor called" << std::endl;
     _value = number << _bits;
 }
 Fixed::Fixed(const float number) {
-    std::cout << "Float constructor called" << std::endl;
+    // std::cout << "Float constructor called" << std::endl;
     _value = roundf(number * (1 << _bits));
 }
 
@@ -27,7 +27,7 @@ Fixed::Fixed(const float number) {
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }
+Fixed::~Fixed() {}
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -71,7 +71,7 @@ Fixed Fixed::operator/(Fixed const& rhs) const {
     return (Fixed(toFloat() / rhs.toFloat()));
 }
 Fixed& Fixed::operator=(Fixed const& rhs) {
-    std::cout << "Copy assignment Fixed::operator called" << std::endl;
+    // std::cout << "Copy assignment Fixed::operator called" << std::endl;
     if (this != &rhs) {
         _value = rhs.getRawBits();
     }
@@ -130,7 +130,7 @@ Fixed const& Fixed::min(Fixed const& a, Fixed const& b) {
 */
 
 int Fixed::getRawBits(void) const {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return (_value);
 }
 

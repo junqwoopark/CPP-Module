@@ -15,7 +15,7 @@ NAME=a.out
 CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
