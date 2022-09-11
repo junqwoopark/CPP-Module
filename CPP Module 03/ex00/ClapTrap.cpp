@@ -29,19 +29,19 @@ ClapTrap::~ClapTrap() {
 
 ClapTrap& ClapTrap::operator=(ClapTrap const& rhs) {
     if (this != &rhs) {
-        this->_name = rhs.getName();
-        this->_attack_damage = rhs.getAttackDamage();
-        this->_hit_points = rhs.getHitPoints();
-        this->_energy_points = rhs.getEnergyPoints();
+        this->_name = rhs.get_name();
+        this->_attack_damage = rhs.get_attack_damage();
+        this->_hit_points = rhs.get_hit_points();
+        this->_energy_points = rhs.get_energy_points();
     }
     return *this;
 }
 
 std::ostream& operator<<(std::ostream& o, ClapTrap const& i) {
-    o << "Name = " << i.getName() << std::endl;
-    o << "HitPoints = " << i.getHitPoints() << std::endl;
-    o << "EnergyPoints = " << i.getEnergyPoints() << std::endl;
-    o << "AttackDamage = " << i.getAttackDamage() << std::endl;
+    o << "Name = " << i.get_name() << std::endl;
+    o << "HitPoints = " << i.get_hit_points() << std::endl;
+    o << "EnergyPoints = " << i.get_energy_points() << std::endl;
+    o << "AttackDamage = " << i.get_attack_damage() << std::endl;
     return o;
 }
 
@@ -87,21 +87,12 @@ void ClapTrap::beRepaired(unsigned int amount) {
 }
 
 void ClapTrap::pairAttackAndTakeDamage(ClapTrap& attacker, ClapTrap& defender) {
-    attacker.attack(defender.getName());
-    defender.takeDamage(attacker.getAttackDamage());
+    attacker.attack(defender.get_name());
+    defender.takeDamage(attacker.get_attack_damage());
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
-std::string ClapTrap::getName(void) const { return (_name); }
-unsigned int ClapTrap::getHitPoints(void) const { return (_hit_points); }
-unsigned int ClapTrap::getEnergyPoints(void) const { return (_energy_points); }
-unsigned int ClapTrap::getAttackDamage(void) const { return (_attack_damage); }
-
-void ClapTrap::setAttackDamage(unsigned int attack_damage) {
-    _attack_damage = attack_damage;
-}
 
 /* ************************************************************************** */

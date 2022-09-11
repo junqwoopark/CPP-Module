@@ -4,6 +4,17 @@
 #include <iostream>
 #include <string>
 
+#define GETTER(T, member) \
+    const T& get##member() const { return member; }
+#define SETTER(T, member) \
+    void set##member(const T& value) { member = value; }
+#define PGSETTER(T, member) \
+   private:                 \
+    T member;               \
+                            \
+   public:                  \
+    SETTER(T, member) GETTER(T, member) private:
+
 class ClapTrap {
    public:
     ClapTrap();
@@ -18,18 +29,11 @@ class ClapTrap {
     void beRepaired(unsigned int amount);
     static void pairAttackAndTakeDamage(ClapTrap& attacker, ClapTrap& defender);
 
-    std::string getName(void) const;
-    unsigned int getHitPoints(void) const;
-    unsigned int getEnergyPoints(void) const;
-    unsigned int getAttackDamage(void) const;
-
-    void setAttackDamage(unsigned int attack_damage);
-
    private:
-    std::string _name;
-    unsigned int _hit_points;
-    unsigned int _energy_points;
-    unsigned int _attack_damage;
+    PGSETTER(std::string, _name);
+    PGSETTER(unsigned int, _hit_points);
+    PGSETTER(unsigned int, _energy_points);
+    PGSETTER(unsigned int, _attack_damage);
     static bool _is_success;
 };
 
