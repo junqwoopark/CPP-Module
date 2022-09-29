@@ -77,4 +77,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+std::string ClapTrap::getName() const { return (_name); }
+void ClapTrap::setName(const std::string& name) { _name = name; }
+
 /* ************************************************************************** */

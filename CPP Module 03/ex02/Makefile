@@ -15,7 +15,7 @@ NAME=a.out
 CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
