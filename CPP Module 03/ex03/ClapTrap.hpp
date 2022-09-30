@@ -19,6 +19,7 @@ class ClapTrap {
 
     void setName(const std::string& name);
     std::string getName() const;
+    virtual void printInfo() const;
 
    protected:
     std::string _name;
@@ -26,8 +27,6 @@ class ClapTrap {
     unsigned int _energyPoints;
     unsigned int _attackDamage;
 };
-
-std::ostream& operator<<(std::ostream& o, ClapTrap const& i);
 
 #endif /* ******************************************************** CLAPTRAP_H \
         */

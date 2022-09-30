@@ -6,7 +6,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
    public:
     ScavTrap();
     ScavTrap(std::string name);
@@ -20,8 +20,6 @@ class ScavTrap : public ClapTrap {
 
    private:
 };
-
-std::ostream& operator<<(std::ostream& o, ScavTrap const& i);
 
 #endif /* ******************************************************** SCAVTRAP_H \
         */

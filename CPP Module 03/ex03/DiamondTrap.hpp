@@ -9,8 +9,6 @@
 
 class DiamondTrap : public ScavTrap, public FragTrap {
    public:
-    using FragTrap::_attackDamage;
-    using FragTrap::_hitPoints;
     using ScavTrap::attack;
     DiamondTrap();
     DiamondTrap(std::string name);
@@ -20,9 +18,12 @@ class DiamondTrap : public ScavTrap, public FragTrap {
     DiamondTrap& operator=(DiamondTrap const& rhs);
 
     void whoAmI();
+    void printInfo() const;
 
    private:
     std::string _name;
+    using FragTrap::_attackDamage;
+    using FragTrap::_hitPoints;
 };
 
 #endif /* ***************************************************** DIAMONDTRAP_H \

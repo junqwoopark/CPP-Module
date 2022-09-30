@@ -50,17 +50,6 @@ FragTrap& FragTrap::operator=(FragTrap const& rhs) {
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void FragTrap::attack(const std::string& target) {
-    if (_energyPoints && _hitPoints) {
-        _energyPoints -= 1;
-        std::cout << "FragTrap " << _name << " attacks " << target
-                  << ", causing " << _attackDamage << " points of damage!"
-                  << std::endl;
-    } else {
-        std::cout << "FragTrap " << _name << "do nothing!" << std::endl;
-    }
-}
-
 void FragTrap::highFivesGuys() {
     std::cout << "positive high fives request" << std::endl;
 }

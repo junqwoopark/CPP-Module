@@ -49,9 +49,15 @@ DiamondTrap& DiamondTrap::operator=(DiamondTrap const& rhs) {
 */
 
 void DiamondTrap::whoAmI() {
-    std::cout << "Who am I?" << std::endl;
-    std::cout << "[ClapTrap] " << ClapTrap::_name << std::endl;
-    std::cout << "[DiamondTrap] " << _name << std::endl;
+    std::cout << "ClapTrap::_name = " << ClapTrap::_name << std::endl;
+    std::cout << "DiamondTrap::_name = " << _name << std::endl;
+}
+
+void DiamondTrap::printInfo() const {
+    std::cout << "name = " << _name << std::endl;
+    std::cout << "hitPoints = " << _hitPoints << std::endl;
+    std::cout << "energyPoints = " << _energyPoints << std::endl;
+    std::cout << "attackDamage = " << _attackDamage << std::endl;
 }
 
 /*

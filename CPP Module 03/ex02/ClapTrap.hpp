@@ -17,14 +17,16 @@ class ClapTrap {
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
+    void setName(const std::string& name);
+    std::string getName() const;
+    void printInfo() const;
+
    protected:
     std::string _name;
     unsigned int _hitPoints;
     unsigned int _energyPoints;
     unsigned int _attackDamage;
 };
-
-std::ostream& operator<<(std::ostream& o, ClapTrap const& i);
 
 #endif /* ******************************************************** CLAPTRAP_H \
         */

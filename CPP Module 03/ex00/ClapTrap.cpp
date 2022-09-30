@@ -49,7 +49,7 @@ void ClapTrap::attack(const std::string& target) {
                   << ", causing " << _attackDamage << " points of damage!"
                   << std::endl;
     } else {
-        std::cout << "ClapTrap " << _name << "do nothing!" << std::endl;
+        std::cout << "ClapTrap " << _name << " do nothing!" << std::endl;
     }
 }
 void ClapTrap::takeDamage(unsigned int amount) {
@@ -69,12 +69,22 @@ void ClapTrap::beRepaired(unsigned int amount) {
         std::cout << "ClapTrap " << _name << " repair " << amount
                   << " hit points." << std::endl;
     } else {
-        std::cout << "ClapTrap " << _name << "do nothing!" << std::endl;
+        std::cout << "ClapTrap " << _name << " do nothing!" << std::endl;
     }
+}
+
+void ClapTrap::printInfo() const {
+    std::cout << "name = " << _name << std::endl;
+    std::cout << "hitPoints = " << _hitPoints << std::endl;
+    std::cout << "energyPoints = " << _energyPoints << std::endl;
+    std::cout << "attackDamage = " << _attackDamage << std::endl;
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+std::string ClapTrap::getName() const { return (_name); }
+void ClapTrap::setName(const std::string& name) { _name = name; }
 
 /* ************************************************************************** */
