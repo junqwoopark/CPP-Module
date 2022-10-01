@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=ex03
+NAME=a.out
 
-CC = c++
+CC = clang++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
 SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp

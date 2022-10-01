@@ -30,11 +30,6 @@ Brain& Brain::operator=(Brain const& rhs) {
     return *this;
 }
 
-// std::ostream& operator<<(std::ostream& o, Brain const& i) {
-//     // o << "Value = " << i.getValue();
-//     return o;
-// }
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */

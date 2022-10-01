@@ -3,17 +3,31 @@
 #include "Dog.hpp"
 
 int main() {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound();  // will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
+    std::cout << "-----Test#0 new Animal()-----" << std::endl;
+    {
+        const Animal* meta = new Animal();
+        std::cout << meta->getType() << std::endl;
+        meta->makeSound();
+        delete meta;
+    }
+    std::cout << std::endl;
 
-    delete meta;
-    delete j;
-    delete i;
+    std::cout << "-----Test#1 new Dog()-----" << std::endl;
+    {
+        const Animal* dog = new Dog();
+        std::cout << dog->getType() << std::endl;
+        dog->makeSound();
+        delete dog;
+    }
+    std::cout << std::endl;
+
+    std::cout << "-----Test#2 new Cat()-----" << std::endl;
+    {
+        const Animal* cat = new Cat();
+        std::cout << cat->getType() << std::endl;
+        cat->makeSound();
+        delete cat;
+    }
+    std::cout << std::endl;
     return (0);
 }

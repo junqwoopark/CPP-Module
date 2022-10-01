@@ -19,7 +19,5 @@ class Cat : public Animal {
    private:
 };
 
-std::ostream& operator<<(std::ostream& o, Cat const& i);
-
 #endif /* ************************************************************* CAT_H \
         */

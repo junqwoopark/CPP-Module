@@ -12,7 +12,7 @@
 
 NAME=phonebook
 
-CC = c++
+CC = clang++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
 SRCS = main.cpp Contact.cpp PhoneBook.cpp

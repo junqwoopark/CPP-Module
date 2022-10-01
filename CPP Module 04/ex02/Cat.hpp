@@ -21,7 +21,5 @@ class Cat : public Animal {
     Brain* _brain;
 };
 
-std::ostream& operator<<(std::ostream& o, Cat const& i);
-
 #endif /* ************************************************************* CAT_H \
         */
