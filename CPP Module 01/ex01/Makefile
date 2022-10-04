@@ -12,7 +12,7 @@
 
 NAME=Moar_brainz
 
-CC = clang++
+CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
 SRCS = Zombie.cpp main.cpp zombieHorde.cpp

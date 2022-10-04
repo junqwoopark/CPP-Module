@@ -12,7 +12,7 @@
 
 NAME=BraiiiiiiinnnzzzZ
 
-CC = clang++
+CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
 SRCS = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp

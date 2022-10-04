@@ -12,7 +12,7 @@
 
 NAME=a.out
 
-CC = clang++
+CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
 SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp

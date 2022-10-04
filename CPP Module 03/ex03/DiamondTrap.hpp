@@ -8,23 +8,20 @@
 #include "ScavTrap.hpp"
 
 class DiamondTrap : public ScavTrap, public FragTrap {
-   public:
-    using ScavTrap::attack;
-    DiamondTrap();
-    DiamondTrap(std::string name);
-    DiamondTrap(DiamondTrap const& src);
-    ~DiamondTrap();
+public:
+  DiamondTrap();
+  DiamondTrap(std::string name);
+  DiamondTrap(DiamondTrap const &src);
+  ~DiamondTrap();
 
-    DiamondTrap& operator=(DiamondTrap const& rhs);
+  DiamondTrap &operator=(DiamondTrap const &rhs);
 
-    void whoAmI();
-    void printInfo() const;
+  void whoAmI();
+  void printInfo() const;
 
-   private:
-    std::string _name;
-    using FragTrap::_attackDamage;
-    using FragTrap::_hitPoints;
+private:
+  std::string _name;
 };
 
-#endif /* ***************************************************** DIAMONDTRAP_H \
+#endif /* ***************************************************** DIAMONDTRAP_H  \
         */

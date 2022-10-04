@@ -12,7 +12,7 @@
 
 NAME=ex00
 
-CC = clang++
+CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
 SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
