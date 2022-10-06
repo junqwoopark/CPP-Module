@@ -5,14 +5,14 @@
 */
 
 Cat::Cat() : Animal() {
-    _type = "Cat";
-    _brain = new Brain();
-    std::cout << "Cat has created." << std::endl;
+  std::cout << "Cat has created." << std::endl;
+  _type = "Cat";
+  _brain = new Brain();
 }
 
-Cat::Cat(const Cat& src) {
-    *this = src;
-    std::cout << "Cat has created." << std::endl;
+Cat::Cat(const Cat &src) {
+  std::cout << "Cat has created." << std::endl;
+  *this = src;
 }
 
 /*
@@ -20,20 +20,20 @@ Cat::Cat(const Cat& src) {
 */
 
 Cat::~Cat() {
-    delete _brain;
-    std::cout << "Cat has deleted." << std::endl;
+  delete _brain;
+  std::cout << "Cat has deleted." << std::endl;
 }
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat& Cat::operator=(Cat const& rhs) {
-    if (this != &rhs) {
-        _type = rhs._type;
-        _brain = rhs._brain;
-    }
-    return *this;
+Cat &Cat::operator=(Cat const &rhs) {
+  if (this != &rhs) {
+    _type = rhs._type;
+    _brain = rhs._brain;
+  }
+  return *this;
 }
 
 /*

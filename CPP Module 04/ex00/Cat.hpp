@@ -7,17 +7,17 @@
 #include "Animal.hpp"
 
 class Cat : public Animal {
-   public:
-    Cat();
-    Cat(Cat const& src);
-    ~Cat();
+public:
+  Cat();
+  Cat(Cat const &src);
+  ~Cat();
 
-    Cat& operator=(Cat const& rhs);
+  Cat &operator=(Cat const &rhs);
 
-    void makeSound() const;
+  void makeSound() const;
 
-   private:
+private:
 };
 
-#endif /* ************************************************************* CAT_H \
+#endif /* ************************************************************* CAT_H  \
         */

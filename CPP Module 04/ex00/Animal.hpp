@@ -5,21 +5,21 @@
 #include <string>
 
 class Animal {
-   public:
-    Animal();
-    Animal(Animal const& src);
-    virtual ~Animal();
+public:
+  Animal();
+  Animal(Animal const &src);
+  virtual ~Animal();
 
-    Animal& operator=(Animal const& rhs);
+  Animal &operator=(Animal const &rhs);
 
-    std::string getType() const;
-    virtual void makeSound() const;
+  std::string getType() const;
+  virtual void makeSound() const;
 
-   protected:
-    std::string _type;
+protected:
+  std::string _type;
 
-   private:
+private:
 };
 
-#endif /* ********************************************************** ANIMAL_H \
+#endif /* ********************************************************** ANIMAL_H  \
         */

@@ -8,19 +8,19 @@
 #include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource {
-   public:
-    MateriaSource();
-    MateriaSource(MateriaSource const& src);
-    ~MateriaSource();
+public:
+  MateriaSource();
+  MateriaSource(MateriaSource const &src);
+  ~MateriaSource();
 
-    MateriaSource& operator=(MateriaSource const& rhs);
+  MateriaSource &operator=(MateriaSource const &rhs);
 
-    void learnMateria(AMateria* materia);
-    AMateria* createMateria(std::string const& type);
+  void learnMateria(AMateria *materia);
+  AMateria *createMateria(std::string const &type);
 
-   private:
-    AMateria* _inventory[4];
+private:
+  AMateria *_inventory[4];
 };
 
-#endif /* *************************************************** MATERIASOURCE_H \
+#endif /* *************************************************** MATERIASOURCE_H  \
         */

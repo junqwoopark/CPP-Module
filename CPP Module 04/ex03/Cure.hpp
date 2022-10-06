@@ -8,17 +8,17 @@
 #include "ICharacter.hpp"
 
 class Cure : public AMateria {
-   public:
-    Cure();
-    Cure(Cure const& src);
-    ~Cure();
+public:
+  Cure();
+  Cure(Cure const &src);
+  ~Cure();
 
-    Cure& operator=(Cure const& rhs);
+  Cure &operator=(Cure const &rhs);
 
-    AMateria* clone() const;
-    void use(ICharacter& target);
+  AMateria *clone() const;
+  void use(ICharacter &target);
 
-   private:
+private:
 };
 
 #endif /* ************************************************************* Cure_H \

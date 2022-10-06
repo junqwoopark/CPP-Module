@@ -5,13 +5,13 @@
 */
 
 Dog::Dog() : Animal() {
-    _type = "Dog";
-    std::cout << "Dog has created." << std::endl;
+  std::cout << "Dog has created." << std::endl;
+  _type = "Dog";
 }
 
-Dog::Dog(const Dog& src) {
-    *this = src;
-    std::cout << "Dog has created." << std::endl;
+Dog::Dog(const Dog &src) {
+  std::cout << "Dog has created." << std::endl;
+  *this = src;
 }
 
 /*
@@ -24,11 +24,11 @@ Dog::~Dog() { std::cout << "Dog has deleted." << std::endl; }
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Dog& Dog::operator=(Dog const& rhs) {
-    if (this != &rhs) {
-        this->_type = rhs._type;
-    }
-    return *this;
+Dog &Dog::operator=(Dog const &rhs) {
+  if (this != &rhs) {
+    this->_type = rhs._type;
+  }
+  return *this;
 }
 
 /*

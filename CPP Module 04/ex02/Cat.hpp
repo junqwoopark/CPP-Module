@@ -8,18 +8,18 @@
 #include "Brain.hpp"
 
 class Cat : public Animal {
-   public:
-    Cat();
-    Cat(Cat const& src);
-    ~Cat();
+public:
+  Cat();
+  Cat(Cat const &src);
+  ~Cat();
 
-    Cat& operator=(Cat const& rhs);
+  Cat &operator=(Cat const &rhs);
 
-    void makeSound() const;
+  void makeSound() const;
 
-   private:
-    Brain* _brain;
+private:
+  Brain *_brain;
 };
 
-#endif /* ************************************************************* CAT_H \
+#endif /* ************************************************************* CAT_H  \
         */
