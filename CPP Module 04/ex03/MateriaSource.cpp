@@ -40,11 +40,11 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &rhs) {
 void MateriaSource::learnMateria(AMateria *materia) {
   for (int i = 0; i < 4; i++) {
     if (_inventory[i] == NULL) {
-      _inventory[i] = materia->clone();
-      break;
+      _inventory[i] = materia;
+      return;
     }
   }
-  return;
+  delete materia;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type) {

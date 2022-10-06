@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cat::Cat() : Animal() {
+Cat::Cat() : AAnimal() {
   std::cout << "Cat has created." << std::endl;
   _type = "Cat";
   _brain = new Brain();
@@ -12,6 +12,7 @@ Cat::Cat() : Animal() {
 
 Cat::Cat(const Cat &src) {
   std::cout << "Cat has created." << std::endl;
+  _brain = new Brain();
   *this = src;
 }
 
@@ -31,7 +32,7 @@ Cat::~Cat() {
 Cat &Cat::operator=(Cat const &rhs) {
   if (this != &rhs) {
     _type = rhs._type;
-    _brain = rhs._brain;
+    *(_brain) = *(rhs._brain);
   }
   return *this;
 }

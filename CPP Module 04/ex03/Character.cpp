@@ -1,4 +1,6 @@
 #include "Character.hpp"
+#include "ICharacter.hpp"
+#include <memory>
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -13,13 +15,18 @@ Character::Character(std::string const &name) : ICharacter() {
   std::memset(_inventory, 0, sizeof(_inventory));
 }
 
-Character::Character(const Character &src) { *this = src; }
+Character::Character(const Character &src) : ICharacter() { *this = src; }
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Character::~Character() {}
+Character::~Character() {
+  for (int i = 0; i < 4; i++) {
+    if (_inventory[i] != NULL)
+      delete _inventory[i];
+  }
+}
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -50,6 +57,9 @@ void Character::equip(AMateria *m) {
 void Character::unequip(int idx) { _inventory[idx] = NULL; }
 
 void Character::use(int idx, ICharacter &target) {
+  if (4 <= idx || idx < 0) {
+    return;
+  }
   if (_inventory[idx] != NULL) {
     _inventory[idx]->use(target);
   }

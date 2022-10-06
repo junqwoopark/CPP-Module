@@ -19,12 +19,13 @@ int main() {
     ICharacter *bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
+
     delete bob;
     delete me;
     delete src;
   }
   std::cout << std::endl;
 
-  system("leaks a.out | grep 'leaked bytes.'");
+  system("leaks a.out");
   return (0);
 }

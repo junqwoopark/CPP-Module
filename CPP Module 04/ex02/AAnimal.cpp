@@ -1,27 +1,27 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal() { std::cout << "Animal has created." << std::endl; }
+AAnimal::AAnimal() { std::cout << "AAnimal has created." << std::endl; }
 
-Animal::Animal(const Animal &src) {
+AAnimal::AAnimal(const AAnimal &src) {
   *this = src;
-  std::cout << "Animal has created." << std::endl;
+  std::cout << "AAnimal has created." << std::endl;
 }
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal() { std::cout << "Animal has deleted." << std::endl; }
+AAnimal::~AAnimal() { std::cout << "AAnimal has deleted." << std::endl; }
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &Animal::operator=(Animal const &rhs) {
+AAnimal &AAnimal::operator=(AAnimal const &rhs) {
   if (this != &rhs) {
     _type = rhs._type;
   }
@@ -36,6 +36,6 @@ Animal &Animal::operator=(Animal const &rhs) {
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string Animal::getType() const { return (_type); }
+std::string AAnimal::getType() const { return (_type); }
 
 /* ************************************************************************** */

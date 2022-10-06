@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Dog::Dog() : Animal() {
+Dog::Dog() : AAnimal() {
   std::cout << "Dog has created." << std::endl;
   _type = "Dog";
   _brain = new Brain();
@@ -12,6 +12,7 @@ Dog::Dog() : Animal() {
 
 Dog::Dog(const Dog &src) {
   std::cout << "Dog has created." << std::endl;
+  _brain = new Brain();
   *this = src;
 }
 
@@ -30,7 +31,8 @@ Dog::~Dog() {
 
 Dog &Dog::operator=(Dog const &rhs) {
   if (this != &rhs) {
-    this->_type = rhs._type;
+    _type = rhs._type;
+    *(_brain) = *(rhs._brain);
   }
   return *this;
 }

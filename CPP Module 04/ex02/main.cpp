@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
@@ -13,7 +13,7 @@ int main() {
 
   std::cout << "-----Test#1 new Dog()-----" << std::endl;
   {
-    const Animal *dog = new Dog();
+    const AAnimal *dog = new Dog();
     std::cout << dog->getType() << std::endl;
     dog->makeSound();
     delete dog;
@@ -22,7 +22,7 @@ int main() {
 
   std::cout << "-----Test#2 new Cat()-----" << std::endl;
   {
-    const Animal *cat = new Cat();
+    const AAnimal *cat = new Cat();
     std::cout << cat->getType() << std::endl;
     cat->makeSound();
     delete cat;
