@@ -7,18 +7,18 @@
 #include "ClapTrap.hpp"
 
 class FragTrap : virtual public ClapTrap {
-   public:
-    FragTrap();
-    FragTrap(std::string name);
-    FragTrap(FragTrap const& src);
-    ~FragTrap();
+public:
+  FragTrap();
+  FragTrap(std::string name);
+  FragTrap(FragTrap const &src);
+  ~FragTrap();
 
-    FragTrap& operator=(FragTrap const& rhs);
+  FragTrap &operator=(FragTrap const &rhs);
 
-    void highFivesGuys();
+  void highFivesGuys();
 
-   private:
+private:
 };
 
-#endif /* ******************************************************** FRAGTRAP_H \
+#endif /* ******************************************************** FRAGTRAP_H  \
         */
