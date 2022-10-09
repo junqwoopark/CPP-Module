@@ -7,45 +7,45 @@
 class Bureaucrat;
 
 class Form {
-   public:
-    Form();
-    Form(std::string const& name, int gradeToSign, int gradeToExecute);
-    Form(Form const& src);
-    virtual ~Form();
+public:
+  Form();
+  Form(std::string const &name, int gradeToSign, int gradeToExecute);
+  Form(Form const &src);
+  virtual ~Form();
 
-    Form& operator=(Form const& rhs);
+  Form &operator=(Form const &rhs);
 
-    class GradeTooHighException : public std::exception {
-       public:
-        const char* what() const throw();
-    };
+  class GradeTooHighException : public std::exception {
+  public:
+    const char *what() const throw();
+  };
 
-    class GradeTooLowException : public std::exception {
-       public:
-        const char* what() const throw();
-    };
+  class GradeTooLowException : public std::exception {
+  public:
+    const char *what() const throw();
+  };
 
-    class FormNotSignedException : public std::exception {
-       public:
-        const char* what() const throw();
-    };
+  class FormNotSignedException : public std::exception {
+  public:
+    const char *what() const throw();
+  };
 
-    void beSigned(Bureaucrat& bureaucrat);
-    virtual void execute(Bureaucrat const& executor) const = 0;
+  void beSigned(Bureaucrat &bureaucrat);
+  virtual void execute(Bureaucrat const &executor) const = 0;
 
-    std::string const& getName() const;
-    bool getSigned() const;
-    int getGradeToSign() const;
-    int getGradeToExecute() const;
+  std::string const &getName() const;
+  bool getSigned() const;
+  int getGradeToSign() const;
+  int getGradeToExecute() const;
 
-   protected:
-    std::string const _name;
-    bool _signed;
-    int const _gradeToSign;
-    int const _gradeToExecute;
+protected:
+  std::string const _name;
+  bool _signed;
+  int const _gradeToSign;
+  int const _gradeToExecute;
 };
 
-std::ostream& operator<<(std::ostream& o, Form const& i);
+std::ostream &operator<<(std::ostream &o, Form const &i);
 
-#endif /* ************************************************************ FORM_H \
+#endif /* ************************************************************ FORM_H  \
         */

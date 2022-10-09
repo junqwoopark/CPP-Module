@@ -8,37 +8,37 @@
 #include "Form.hpp"
 
 class Bureaucrat {
-    class GradeTooHighException : public std::exception {
-       public:
-        const char* what() const throw();
-    };
+  class GradeTooHighException : public std::exception {
+  public:
+    const char *what() const throw();
+  };
 
-    class GradeTooLowException : public std::exception {
-       public:
-        const char* what() const throw();
-    };
+  class GradeTooLowException : public std::exception {
+  public:
+    const char *what() const throw();
+  };
 
-   public:
-    Bureaucrat();
-    Bureaucrat(std::string const& name, int grade);
-    Bureaucrat(Bureaucrat const& src);
-    ~Bureaucrat();
+public:
+  Bureaucrat();
+  Bureaucrat(std::string const &name, int grade);
+  Bureaucrat(Bureaucrat const &src);
+  ~Bureaucrat();
 
-    Bureaucrat& operator=(Bureaucrat const& rhs);
+  Bureaucrat &operator=(Bureaucrat const &rhs);
 
-    void incrementGrade();
-    void decrementGrade();
-    void signForm(Form& form);
+  void incrementGrade();
+  void decrementGrade();
+  void signForm(Form &form);
 
-    std::string const& getName() const;
-    int getGrade() const;
+  std::string const &getName() const;
+  int getGrade() const;
 
-   private:
-    std::string const _name;
-    int _grade;
+private:
+  std::string const _name;
+  int _grade;
 };
 
-std::ostream& operator<<(std::ostream& o, Bureaucrat const& i);
+std::ostream &operator<<(std::ostream &o, Bureaucrat const &i);
 
-#endif /* ****************************************************** BUREAUCRAT_H \
+#endif /* ****************************************************** BUREAUCRAT_H  \
         */

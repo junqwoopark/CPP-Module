@@ -8,22 +8,22 @@
 #include "Form.hpp"
 
 class PresidentialPardonForm : public Form {
-   public:
-    PresidentialPardonForm();
-    PresidentialPardonForm(std::string const& target);
-    PresidentialPardonForm(PresidentialPardonForm const& src);
-    ~PresidentialPardonForm();
+public:
+  PresidentialPardonForm();
+  PresidentialPardonForm(std::string const &target);
+  PresidentialPardonForm(PresidentialPardonForm const &src);
+  ~PresidentialPardonForm();
 
-    PresidentialPardonForm& operator=(PresidentialPardonForm const& rhs);
+  PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 
-    void execute(Bureaucrat const& executor) const;
-    Form* create(std::string const& target) const;
+  void execute(Bureaucrat const &executor) const;
+  Form *create(std::string const &target) const;
 
-   private:
-    std::string const _target;
+private:
+  std::string const _target;
 };
 
-std::ostream& operator<<(std::ostream& o, PresidentialPardonForm const& i);
+std::ostream &operator<<(std::ostream &o, PresidentialPardonForm const &i);
 
-#endif /* ****************************************** PRESIDENTIALPARDONFORM_H \
+#endif /* ****************************************** PRESIDENTIALPARDONFORM_H  \
         */

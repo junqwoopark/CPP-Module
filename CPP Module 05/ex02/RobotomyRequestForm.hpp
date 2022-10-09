@@ -8,21 +8,21 @@
 #include "Form.hpp"
 
 class RobotomyRequestForm : public Form {
-   public:
-    RobotomyRequestForm();
-    RobotomyRequestForm(std::string const& target);
-    RobotomyRequestForm(RobotomyRequestForm const& src);
-    ~RobotomyRequestForm();
+public:
+  RobotomyRequestForm();
+  RobotomyRequestForm(std::string const &target);
+  RobotomyRequestForm(RobotomyRequestForm const &src);
+  ~RobotomyRequestForm();
 
-    RobotomyRequestForm& operator=(RobotomyRequestForm const& rhs);
+  RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 
-    void execute(Bureaucrat const& executor) const;
+  void execute(Bureaucrat const &executor) const;
 
-   private:
-    std::string const _target;
+private:
+  std::string const _target;
 };
 
-std::ostream& operator<<(std::ostream& o, RobotomyRequestForm const& i);
+std::ostream &operator<<(std::ostream &o, RobotomyRequestForm const &i);
 
-#endif /* ********************************************* ROBOTOMYREQUESTFORM_H \
+#endif /* ********************************************* ROBOTOMYREQUESTFORM_H  \
         */
