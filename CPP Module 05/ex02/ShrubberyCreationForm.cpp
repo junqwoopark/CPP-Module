@@ -4,7 +4,8 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form() {}
+ShrubberyCreationForm::ShrubberyCreationForm()
+    : Form("ShrubberyCreationForm", 145, 137), _target("target") {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target)
     : Form("ShrubberyCreationForm", 145, 137), _target(target) {}
@@ -32,21 +33,15 @@ ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs) {
   return *this;
 }
 
-std::ostream &operator<<(std::ostream &o, ShrubberyCreationForm const &i) {
-  o << i.getName() << ", form grade to sign " << i.getGradeToSign()
-    << ", form grade to execute " << i.getGradeToExecute() << std::endl;
-  return o;
-}
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
-  if (getSigned() == false)
-    throw Form::FormNotSignedException();
-  else if (executor.getGrade() > getGradeToExecute())
+  if (executor.getGrade() > getGradeToExecute())
     throw Form::GradeTooLowException();
+  else if (getSigned() == false)
+    throw Form::FormNotSignedException();
   else {
     std::ofstream file;
     file.open(_target + "_shrubbery");

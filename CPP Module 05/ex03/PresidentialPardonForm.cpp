@@ -4,7 +4,8 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-PresidentialPardonForm::PresidentialPardonForm() {}
+PresidentialPardonForm::PresidentialPardonForm()
+    : Form("PresidentialPardonForm", 25, 5), _target("target") {}
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const &target)
     : Form("PresidentialPardonForm", 25, 5), _target(target) {}
@@ -44,22 +45,19 @@ std::ostream &operator<<(std::ostream &o, PresidentialPardonForm const &i) {
 */
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
-  if (getSigned() == false) {
-    throw Form::FormNotSignedException();
-  } else if (executor.getGrade() > getGradeToExecute()) {
+  if (executor.getGrade() > getGradeToExecute())
     throw Form::GradeTooLowException();
-  } else {
+  else if (getSigned() == false)
+    throw Form::FormNotSignedException();
+  else
     std::cout << _target << " has been pardoned by Zafod Beeblebrox."
               << std::endl;
-  }
-}
-
-Form *PresidentialPardonForm::create(std::string const &target) const {
-  return new PresidentialPardonForm(target);
 }
 
 /*
-** --------------------------------- ACCESSOR ---------------------------------
+** --------------------------------- ACCESSOR
+*---------------------------------
 */
 
-/* ************************************************************************** */
+/* **************************************************************************
+ */

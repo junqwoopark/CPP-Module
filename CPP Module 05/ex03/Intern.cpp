@@ -6,7 +6,7 @@
 
 Intern::Intern() {}
 
-Intern::Intern(const Intern &src) {}
+Intern::Intern(const Intern &src) { *this = src; }
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------

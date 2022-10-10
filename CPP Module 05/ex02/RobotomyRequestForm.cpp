@@ -4,7 +4,8 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-RobotomyRequestForm::RobotomyRequestForm() : Form() {}
+RobotomyRequestForm::RobotomyRequestForm()
+    : Form("RobotomyRequestForm", 72, 45), _target("target") {}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const &target)
     : Form("RobotomyRequestForm", 72, 45), _target(target) {}
@@ -43,10 +44,10 @@ std::ostream &operator<<(std::ostream &o, RobotomyRequestForm const &i) {
 */
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
-  if (getSigned() == false)
-    throw Form::FormNotSignedException();
-  else if (executor.getGrade() > getGradeToExecute())
+  if (executor.getGrade() > getGradeToExecute())
     throw Form::GradeTooLowException();
+  else if (getSigned() == false)
+    throw Form::FormNotSignedException();
   else {
     std::srand(time(NULL));
     if (std::rand() % 2 == 0)

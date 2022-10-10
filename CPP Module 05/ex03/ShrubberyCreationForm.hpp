@@ -18,13 +18,10 @@ public:
   ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
 
   void execute(Bureaucrat const &executor) const;
-  Form *create(std::string const &target) const;
 
 private:
   std::string const _target;
 };
-
-std::ostream &operator<<(std::ostream &o, ShrubberyCreationForm const &i);
 
 #endif /* ******************************************* SHRUBBERYCREATIONFORM_H  \
         */

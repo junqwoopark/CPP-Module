@@ -17,7 +17,6 @@ public:
   PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 
   void execute(Bureaucrat const &executor) const;
-  Form *create(std::string const &target) const;
 
 private:
   std::string const _target;

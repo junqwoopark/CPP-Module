@@ -28,9 +28,9 @@ public:
   void beSigned(Bureaucrat &bureaucrat);
 
   std::string const &getName() const;
-  bool getSigned() const;
-  int getGradeToSign() const;
-  int getGradeToExecute() const;
+  bool const &getSigned() const;
+  int const &getGradeToSign() const;
+  int const &getGradeToExecute() const;
 
 private:
   std::string const _name;
