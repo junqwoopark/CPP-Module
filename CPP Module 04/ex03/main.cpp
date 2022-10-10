@@ -52,7 +52,6 @@ int main() {
     delete src;
   }
   std::cout << std::endl;
-
   system("leaks a.out");
   return (0);
 }
