@@ -35,7 +35,8 @@ RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs) {
 
 std::ostream &operator<<(std::ostream &o, RobotomyRequestForm const &i) {
   o << i.getName() << ", form grade to sign " << i.getGradeToSign()
-    << ", form grade to execute " << i.getGradeToExecute() << std::endl;
+    << ", form grade to execute " << i.getGradeToExecute() << ", form signed "
+    << i.getSigned() << std::endl;
   return o;
 }
 

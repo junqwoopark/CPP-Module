@@ -36,7 +36,8 @@ PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs) {
 
 std::ostream &operator<<(std::ostream &o, PresidentialPardonForm const &i) {
   o << i.getName() << ", form grade to sign " << i.getGradeToSign()
-    << ", form grade to execute " << i.getGradeToExecute() << std::endl;
+    << ", form grade to execute " << i.getGradeToExecute() << ", form signed "
+    << i.getSigned() << std::endl;
   return o;
 }
 
@@ -55,8 +56,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 }
 
 /*
-** --------------------------------- ACCESSOR
-*---------------------------------
+** --------------------------------- ACCESSOR ---------------------------------
 */
 
 /* **************************************************************************

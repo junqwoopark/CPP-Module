@@ -33,6 +33,13 @@ ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs) {
   return *this;
 }
 
+std::ostream &operator<<(std::ostream &o, ShrubberyCreationForm const &i) {
+  o << i.getName() << ", form grade to sign " << i.getGradeToSign()
+    << ", form grade to execute " << i.getGradeToExecute() << ", form signed "
+    << i.getSigned() << std::endl;
+  return o;
+}
+
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
