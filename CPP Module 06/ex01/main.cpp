@@ -20,7 +20,8 @@ int main() {
   Data data;
 
   uintptr_t raw = serialize(&data);
+  std::cout << (uintptr_t)&data << std::endl;
   std::cout << raw << std::endl;
   Data *ptr = deserialize(raw);
-  std::cout << (ptr == &data) << std::endl;
+  std::cout << ((ptr == &data) ? "true" : "false") << std::endl;
 }

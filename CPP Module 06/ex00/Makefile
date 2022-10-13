@@ -3,7 +3,7 @@ NAME=convert
 CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp
+SRCS = main.cpp Converter.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)

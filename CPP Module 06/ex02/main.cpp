@@ -31,4 +31,5 @@ void identify(Base *p) {
 int main() {
   Base *base = generate();
   identify(base);
+  delete base;
 }
