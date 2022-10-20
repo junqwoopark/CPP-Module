@@ -3,7 +3,7 @@ NAME=a.out
 CC = c++
 CFLAGS = --std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
@@ -11,7 +11,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(OBJS) : $(SRCS)
+%.o : %.cpp
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean :

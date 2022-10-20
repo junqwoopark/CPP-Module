@@ -19,6 +19,15 @@ public:
   void addNumber(int number);
   unsigned int shortestSpan();
   unsigned int longestSpan();
+  template <typename T> void addRange(T begin, T end) {
+    while (begin != end) {
+      if (!_n)
+        throw std::runtime_error("N elements are already stored!");
+      _n--;
+      _v.push_back(*begin);
+      begin++;
+    }
+  }
 
 private:
   unsigned int _n;

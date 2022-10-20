@@ -11,7 +11,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(OBJS) : $(SRCS)
+%.o : %.cpp
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean :

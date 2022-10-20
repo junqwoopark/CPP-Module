@@ -21,7 +21,11 @@ int main() {
     for (int i = 0; i < 10; i++) {
       v.push_back(i);
     }
-    std::cout << easyfind(v, 12) << std::endl;
+    try {
+      std::cout << *easyfind(v, 12) << std::endl;
+    } catch (std::exception &e) {
+      std::cout << "Error: " << e.what() << std::endl;
+    }
   }
   std::cout << std::endl;
 }
