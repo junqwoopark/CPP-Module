@@ -2,13 +2,11 @@
 #include <stdexcept>
 
 template <typename T> typename T::iterator easyfind(T &container, int target) {
-  typename T::iterator it = container.begin();
-  typename T::iterator ite = container.end();
+  typename T::iterator it;
 
-  while (it != ite) {
-    if (*it == target)
-      return (it);
-    it++;
-  }
-  throw std::runtime_error("Not found!");
+  it = std::find(container.begin(), container.end(), target);
+
+  if (it == container.end())
+    throw std::runtime_error("Target not found");
+  return (it);
 }
